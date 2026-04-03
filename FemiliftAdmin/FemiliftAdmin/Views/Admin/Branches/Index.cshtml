@@ -1,0 +1,39 @@
+﻿@model IEnumerable<FemiliftAdmin.Models.Branch>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "院所管理";
+}
+
+<div class="admin-card">
+    <div class="admin-card-header">
+        <h2>院所管理</h2>
+        <a href="@Url.Action("Create")" class="btn btn-primary">+ 新增院所</a>
+    </div>
+
+    <ul id="branch-sortable-list" class="branch-admin-list">
+        @foreach (var branch in Model)
+        {
+            <li class="branch-admin-item" data-id="@branch.Id">
+                <span class="drag-handle">&#9776;</span>
+                @if (!string.IsNullOrEmpty(branch.ImagePath))
+                {
+                    <img src="~/@branch.ImagePath" alt="@branch.Name" class="branch-thumb" />
+                }
+                else
+                {
+                    <span class="branch-thumb" style="display:inline-block;"></span>
+                }
+                <span class="branch-name">@branch.Name</span>
+                <span class="branch-phone">@branch.Phone</span>
+                <div class="branch-actions">
+                    <button type="button"
+                            class="btn-toggle @(branch.IsVisible ? "visible" : "hidden")"
+                            data-id="@branch.Id">
+                        @(branch.IsVisible ? "顯示" : "隱藏")
+                    </button>
+                    <a href="@Url.Action("Edit", new { id = branch.Id })" class="btn btn-sm btn-outline-primary">編輯</a>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

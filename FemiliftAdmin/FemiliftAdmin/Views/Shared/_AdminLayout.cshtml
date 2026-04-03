@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - 菲蜜莉後台管理</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/admin.css" rel="stylesheet" />
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <a href="~/Admin/Branches">菲蜜莉雷射<br /><small>後台管理</small></a>
+            </div>
+            <ul class="nav-menu">
+                <li>
+                    <a href="@Url.Action("Index", "Branches", new { area = "" })"
+                       class="@(ViewContext.RouteData.Values["controller"].ToString() == "Branches" ? "active" : "")">
+                        <span class="icon">&#128203;</span> 院所管理
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-divider"></div>
+            <ul class="nav-menu">
+                <li>
+                    <a href="@Url.Action("ChangePassword", "Account")">
+                        <span class="icon">&#128273;</span> 改密碼
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Logout", "Account")">
+                        <span class="icon">&#128682;</span> 登出
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div class="admin-main">
+            <div class="admin-topbar">
+                歡迎，@(Session["AdminUsername"] ?? "管理員")
+            </div>
+            <div class="admin-content">
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert-success-custom">@TempData["Success"]</div>
+                }
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="~/Scripts/admin.js"></script>
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts", required: false)
+    }
+</body>
+</html>

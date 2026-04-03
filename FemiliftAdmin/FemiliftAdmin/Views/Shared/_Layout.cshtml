@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>菲蜜莉雷射－免動刀私密處雷射，無痛改善漏尿、鬆弛，重拾青春緊緻</title>
+    <link href="~/favicon.ico" rel="icon">
+    <link href="~/favicon.ico" rel="shortcut icon">
+    <link href="~/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/css/aos.css" rel="stylesheet">
+    <link href="~/assets/css/slick.css" rel="stylesheet">
+    <link href="~/assets/css/swiper.min.css" rel="stylesheet">
+    <link href="~/assets/css/custom.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar-mask"></div>
+    <header id="global-header-wrapper">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="navbar-options">
+                    <button class="navbar-toggler navbar-switch" type="button">
+                        <div class="menu-icon"><span></span></div>
+                    </button>
+                </div>
+                <h1 class="navbar-brand">
+                    <a title="菲蜜莉雷射" href="~/"></a>
+                </h1>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a title="閨密情報站" class="nav-link" href="~/intelligence.html">閨密情報站</a></li>
+                        <li class="nav-item"><a title="閨密生活大小事" class="nav-link" href="~/blog_domestic.html">閨密生活大小事</a></li>
+                        <li class="nav-item"><a title="影音專區" class="nav-link" href="~/media.html">影音專區</a></li>
+                        <li class="nav-item"><a title="Q & A" class="nav-link" href="~/question.html">Q & A</a></li>
+                        <li class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Branch" ? "current" : "")">
+                            <a title="院所資訊" class="nav-link" href="@Url.Action("Index", "Branch")">院所資訊</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="d-flex community-links">
+                    <li><a href="https://www.facebook.com/Femilift.asia/" class="fb"></a></li>
+                    <li><a href="#" class="ig"></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="page-body-wrapper">
+        @RenderBody()
+    </div>
+    <footer id="global-footer-wrapper" class="mt-auto">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-center">
+                <ul class="bd-footer-links">
+                    <li><a title="閨密情報站" href="~/intelligence.html">閨密情報站</a></li>
+                    <li><a title="閨密生活大小事" href="~/blog_domestic.html">閨密生活大小事</a></li>
+                    <li><a title="影音專區" href="~/media.html">影音專區</a></li>
+                    <li><a title="Q & A" href="~/question.html">Q & A</a></li>
+                    <li><a title="院所資訊" href="@Url.Action("Index", "Branch")">院所資訊</a></li>
+                </ul>
+                <ul class="d-flex community-links">
+                    <li><a href="https://www.facebook.com/Femilift.asia/" class="fb"></a></li>
+                    <li><a href="#" class="ig"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div id="global-go-to-page"></div>
+    <script async src="~/assets/js/vendor/require.min.js" data-main="/assets/js/require-config.js"></script>
+</body>
+</html>

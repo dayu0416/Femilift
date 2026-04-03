@@ -1,0 +1,24 @@
+# Visual Studio / ASP.NET artifacts
+.vs/
+.claude/
+**/bin/
+**/obj/
+**/packages/
+*.user
+*.suo
+*.cache
+*.log
+*.pidb
+*.svclog
+*.scc
+*.DS_Store
+Thumbs.db
+
+# NuGet / publish user files
+*.pubxml.user
+*.publishsettings
+
+# Local IDE settings
+.idea/
+.vscode/
+此層拉進VS做AI-SDD.txt

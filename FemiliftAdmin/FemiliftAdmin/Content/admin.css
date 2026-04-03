@@ -1,0 +1,277 @@
+﻿/* Admin Layout */
+body.admin-body {
+    font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: 240px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    flex-shrink: 0;
+}
+
+.admin-sidebar .sidebar-brand {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    background: #1a252f;
+    text-align: center;
+    border-bottom: 1px solid #34495e;
+}
+
+.admin-sidebar .sidebar-brand a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.admin-sidebar .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-sidebar .nav-menu li a {
+    display: block;
+    padding: 14px 20px;
+    color: #bdc3c7;
+    text-decoration: none;
+    border-bottom: 1px solid #34495e;
+    transition: background 0.2s;
+}
+
+.admin-sidebar .nav-menu li a:hover,
+.admin-sidebar .nav-menu li a.active {
+    background: #34495e;
+    color: #fff;
+}
+
+.admin-sidebar .nav-menu li a .icon {
+    margin-right: 8px;
+}
+
+.sidebar-divider {
+    border-top: 1px solid #34495e;
+    margin: 10px 0;
+}
+
+/* Main content */
+.admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-topbar {
+    background: #fff;
+    padding: 12px 24px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.admin-content {
+    padding: 24px;
+    flex: 1;
+}
+
+/* Cards */
+.admin-card {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.admin-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-card-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+/* Branch list in admin */
+.branch-admin-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.branch-admin-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background: #fff;
+    transition: box-shadow 0.2s;
+}
+
+.branch-admin-item:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.branch-admin-item .drag-handle {
+    cursor: grab;
+    color: #aaa;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.branch-admin-item .drag-handle:active {
+    cursor: grabbing;
+}
+
+.branch-admin-item .branch-thumb {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 16px;
+    background: #eee;
+}
+
+.branch-admin-item .branch-name {
+    flex: 1;
+    font-weight: 500;
+    color: #333;
+}
+
+.branch-admin-item .branch-phone {
+    color: #666;
+    margin-right: 16px;
+    font-size: 14px;
+}
+
+.branch-admin-item .branch-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Toggle button */
+.btn-toggle {
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    min-width: 60px;
+}
+
+.btn-toggle.visible {
+    background: #27ae60;
+    color: #fff;
+}
+
+.btn-toggle.hidden {
+    background: #e74c3c;
+    color: #fff;
+}
+
+/* Alert */
+.alert-success-custom {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-group .form-control {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group .field-validation-error {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.image-preview {
+    max-width: 200px;
+    max-height: 140px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Login page */
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f4f6f9;
+}
+
+.login-box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #2c3e50;
+}
+
+.validation-summary-errors {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* SortableJS ghost */
+.sortable-ghost {
+    opacity: 0.4;
+    background: #c8ebfb;
+}

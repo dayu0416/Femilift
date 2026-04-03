@@ -1,0 +1,39 @@
+﻿@model FemiliftAdmin.Models.ViewModels.LoginViewModel
+@{
+    Layout = null;
+    ViewBag.Title = "登入";
+}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>登入 - 菲蜜莉後台管理</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/admin.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-box">
+            <h2>菲蜜莉雷射<br /><small style="font-size:14px;color:#666;">後台管理系統</small></h2>
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Username)
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "請輸入帳號" })
+                    @Html.ValidationMessageFor(m => m.Username)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "請輸入密碼" })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <button type="submit" class="btn btn-primary w-100" style="margin-top:12px;">登入</button>
+            }
+        </div>
+    </div>
+</body>
+</html>

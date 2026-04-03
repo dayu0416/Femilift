@@ -1,0 +1,53 @@
+﻿@model FemiliftAdmin.Models.ViewModels.BranchEditViewModel
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "新增院所";
+}
+
+<div class="admin-card">
+    <div class="admin-card-header">
+        <h2>新增院所</h2>
+    </div>
+
+    @using (Html.BeginForm("Create", "Branches", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Phone)
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Phone)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Hours)
+            @Html.TextAreaFor(m => m.Hours, new { @class = "form-control", rows = 4, placeholder = "每行一個時段，例如：\n星期一至五 / 09:00-22:00\n星期六 / 10:00-19:00" })
+            @Html.ValidationMessageFor(m => m.Hours)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Address)
+            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Address)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.MapUrl)
+            @Html.TextBoxFor(m => m.MapUrl, new { @class = "form-control", placeholder = "Google Maps 連結" })
+            @Html.ValidationMessageFor(m => m.MapUrl)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ImageFile)
+            <input type="file" name="ImageFile" id="ImageFile" accept=".jpg,.jpeg,.png,.webp" class="form-control" />
+            <small style="color:#888;">建議尺寸 600x400，支援 jpg/png/webp，上限 2MB</small>
+            @Html.ValidationMessageFor(m => m.ImageFile)
+            <br />
+            <img id="image-preview" style="display:none;" class="image-preview" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">新增</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">取消</a>
+    }
+</div>

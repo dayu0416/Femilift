@@ -1,0 +1,49 @@
+﻿@model IEnumerable<FemiliftAdmin.Models.Branch>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-banner-frame c-gray" data-parallax="scroll" data-image-src="@Url.Content("~/assets/images/page-banner-branch.jpg")">
+    <div class="pb-outer" data-aos="fade-down">
+        <div class="pb-middle">
+            <div class="en">菲蜜莉雷射</div>
+            <h2 class="zh">原廠認證院所</h2>
+            <div class="caption">北中南診所資訊</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid body-content">
+    <div class="branch-list-frame">
+        @foreach (var branch in Model)
+        {
+            <div class="list-item" data-aos="fade-up">
+                <div class="col-picture">
+                    @if (!string.IsNullOrEmpty(branch.ImagePath))
+                    {
+                        <img src="~/@branch.ImagePath" alt="@branch.Name">
+                    }
+                </div>
+                <div class="col-info">
+                    <div class="info-item">
+                        <div class="col-name">@branch.Name</div>
+                        <div class="col-phone">
+                            <div class="tel"><span>TEL</span> @branch.Phone</div>
+                            @if (!string.IsNullOrEmpty(branch.Hours))
+                            {
+                                <pre style="font-family:inherit; font-size:inherit; margin:0; padding:0; white-space:pre-wrap;">@branch.Hours</pre>
+                            }
+                        </div>
+                        <div class="col-address">@branch.Address</div>
+                        @if (!string.IsNullOrEmpty(branch.MapUrl))
+                        {
+                            <div class="col-button-link">
+                                <a title="查看地圖" class="btn btn-hover-shadow"
+                                   href="@branch.MapUrl" target="_blank" rel="noopener noreferrer nofollow">查看地圖</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
