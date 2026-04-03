@@ -1,6 +1,5 @@
 # Visual Studio / ASP.NET artifacts
 .vs/
-.claude/
 **/bin/
 **/obj/
 **/packages/
@@ -21,4 +20,3 @@ Thumbs.db
 # Local IDE settings
 .idea/
 .vscode/
-此層拉進VS做AI-SDD.txt

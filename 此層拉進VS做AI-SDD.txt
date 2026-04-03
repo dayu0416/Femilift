@@ -1,0 +1,2 @@
+此層是 AI-coding 專案工作區。
+開發時請直接將此層拉進 VS Code，並依 `openspec` 的 AI-coding 開發方式進行。
