@@ -13,7 +13,6 @@
 - `.claude/`：AI-coding 相關技能與指令
 - `openspec/`：OpenSpec 規格、變更與任務記錄
 - `FemiliftAdmin/`：主要專案程式碼
-- `此層拉進VS做AI-SDD.txt`：此工作區的提醒說明
 
 ## 開發方式
 
