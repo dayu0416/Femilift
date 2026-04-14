@@ -28,6 +28,18 @@ namespace FemiliftAdmin.Migrations
                 context.SaveChanges();
             }
 
+            // Seed super admin (backup account with strong pre-hashed password).
+            // Plaintext is intentionally not stored in source; only a BCrypt hash (cost 12) lives here.
+            if (!context.AdminUsers.Any(u => u.Username == "superadmin"))
+            {
+                context.AdminUsers.Add(new AdminUser
+                {
+                    Username = "superadmin",
+                    PasswordHash = "$2b$12$UfZDkCApOLqiHgrgeOAvpOtnjNg3ruUhA01PYgt.UlcKDhkCS6DCS"
+                });
+                context.SaveChanges();
+            }
+
             // Seed branches
             if (!context.Branches.Any())
             {
